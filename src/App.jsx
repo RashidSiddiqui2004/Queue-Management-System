@@ -33,23 +33,19 @@ function App() {
     <main id='main'>
       <header className='header'>
         <div>
-          <h2>Queue Management System</h2>
-          <p>Manage your customers efficiently</p>
+          <h2 data-testid='queue-management-system-title'>Queue Management System</h2>
+          <p data-testid='queue-management-system-description'>Manage your customers efficiently</p>
         </div>
         <div>
-          <button id='author'>Rashid Siddiqui</button>
-          <button id='embed'>Embed</button>
+          <button id='author' data-testid='author-button'>Rashid Siddiqui</button>
+          <button id='embed' data-testid='embed-button'>Embed</button>
         </div>
       </header>
 
       {/* Main Application */}
       <div id='app'>
-        <div id='queue-add'>
-          <QueueForm onAddCustomer={addCustomer} />
-        </div>
-        <div id='queue-list'>
-          <QueueDisplay queue={queue} changeCustomerStatus={changeStatusOfCustomer} removeCustomer={removeCustomer} />
-        </div>
+        <QueueForm onAddCustomer={addCustomer} data-testid='queue-form' />
+        <QueueDisplay queue={queue} changeCustomerStatus={changeStatusOfCustomer} removeCustomer={removeCustomer} data-testid='queue-display' />
       </div>
 
       <Footer />

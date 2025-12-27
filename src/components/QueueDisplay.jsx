@@ -6,16 +6,16 @@ import styles from './QueueDisplay.module.css';
 const QueueDisplay = ({ queue, changeCustomerStatus, removeCustomer }) => {
     return (
         <div className={styles.container}>
-            <h2 className={styles.title}>Current Queue ({queue.length})</h2>
+            <h2 className={styles.title} data-testid='queue-title'>Current Queue ({queue.length})</h2>
 
             {queue.length === 0 ? (
-                <div className={styles.emptyState}>
+                <div className={styles.emptyState} data-testid='queue-empty-state'>
                     <FaUsers className={styles.emptyIcon} />
                     <h3>No customers in queue</h3>
                     <p>Add customers to get started.</p>
                 </div>
             ) : (
-                <div className={styles.list}>
+                <div className={styles.list} data-testid='queue-list'>
                     {/* serving customers at the front */}
                     {
                         queue.filter(customer => customer.status === 'serving').map((customer) => (

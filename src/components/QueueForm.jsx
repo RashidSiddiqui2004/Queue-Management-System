@@ -30,8 +30,8 @@ const QueueForm = ({ onAddCustomer }) => {
     };
 
     return (
-        <div className={styles.formContainer}>
-            <h2 className={styles.title}>Add Customer</h2>
+        <div className={styles.formContainer} data-testid='queue-form'>
+            <h2 className={styles.title} data-testid='queue-form-title'>Add Customer</h2>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.inputWrapper}>
                     <input
@@ -40,6 +40,7 @@ const QueueForm = ({ onAddCustomer }) => {
                         placeholder="Full Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
+                        data-testid='queue-form-name'
                         required
                     />
                 </div>
@@ -50,6 +51,7 @@ const QueueForm = ({ onAddCustomer }) => {
                         placeholder="Email Address"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        data-testid='queue-form-email'
                         required
                     />
                 </div>
@@ -61,6 +63,7 @@ const QueueForm = ({ onAddCustomer }) => {
                         value={serviceType}
                         onChange={(e) => setServiceType(e.target.value)}
                         required
+                        data-testid='queue-form-service-type'
                     >
                         <option value="">Select Service Type</option>
                         {/* Service type options for IT Industry */}
@@ -71,7 +74,7 @@ const QueueForm = ({ onAddCustomer }) => {
                     </select>
                 </div>
 
-                <button className={styles.button} type="submit">
+                <button className={styles.button} type="submit" data-testid='queue-form-check-in'>
                     <FaUser />
                     <p>Check In</p>
                 </button>
